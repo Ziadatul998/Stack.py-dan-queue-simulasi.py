@@ -1,0 +1,50 @@
+1).stack
+stack=[]
+#push elemen ke stack
+stack.append(10)
+stack.append(20)
+stack.append(30)
+print("stack setelah push:",stack)
+
+#push elemen dari stuck
+elemen=stack.pop()
+print("elemen yang di-pop:",elemen)
+print("stack setelah pop:",stack)
+
+#peek elemen teratas
+if stack:
+    print("elemen teratas:",stack[-1])
+else:
+    print("stack kosong")
+
+2).queue simulasi
+from collections import deque
+def simulasi_antrian():
+    queue=deque()
+    while True:
+        print("\n 1. tambah pelanggan ke antrian")
+        print("2. layani pelanggan")
+        print("3. tampilkan antrian")
+        print("4. keluar")
+        pilihan=input("pilih opsi:")
+        
+        if pilihan=="1":
+            nama=input("masukkan nama pelanggan:")
+            queue.append(nama)
+            print(f"pelanggan{nama}ditambahkan ke antrian.")
+        elif pilihan=="2":
+            if queue:
+                dilayani=queue.peopleft()
+                print(f"pelanggan{dilayani}sedang dilayani.")
+            else:
+                print("antrian kosong!")
+        elif pilihan=="3":
+            print("antrian saat ini:",list(queue))
+        elif pilihan=="4":
+            print("keluar dari program.")
+            break
+        else:
+            print("opsi tidak valid!")
+       
+#menjelaskan simulasi
+simulasi_antrian()
